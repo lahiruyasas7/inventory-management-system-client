@@ -1,13 +1,13 @@
 export interface PopularProducts {
-  productId: String;
-  name: String;
+  productId: string;
+  name: string;
   price: number;
   rating?: number;
   stockQuantity: number;
 }
 
 export interface SalesSummary {
-  salesSummaryId: String;
+  salesSummaryId: string;
   totalValue: number;
   changePercentage?: number;
   date: string;
