@@ -1,6 +1,8 @@
 "use client";
 import { useGetDashboardMetricsQuery } from "@/state/api";
+import { ShoppingBag } from "lucide-react";
 import React from "react";
+import Rating from "../(components)/Rating";
 
 type Props = {};
 
@@ -24,7 +26,7 @@ const CardPopularProduct = (props: Props) => {
                 key={product?.productId}
                 className="flex items-center justify-between gap-3 px-5 py-7 border-b"
               >
-                <div>
+                <div className="flex items-center gap-3">
                   <div>img</div>
                   <div className="flex flex-col justify-between gap-1">
                     <div className="font-bold text-gray-700">
@@ -35,9 +37,18 @@ const CardPopularProduct = (props: Props) => {
                         ${product.price}
                       </span>
                       <span className="mx-2">|</span>
-                      <div>rating</div>
+                      <Rating rating={product.rating || 0}/>
                     </div>
                   </div>
+                </div>
+                <div className="text-xs flex items-center">
+                  <button
+                    type="button"
+                    className="p-2 rounded-full bg-blue-100 text-blue-100 mr-2"
+                  >
+                    <ShoppingBag className="w-4 h-4 z-10" />
+                  </button>
+                  {Math.round(product.stockQuantity / 1000)}k Sold
                 </div>
               </div>
             ))}
