@@ -44,7 +44,7 @@ const CardPopularProduct = (props: Props) => {
                 <div className="text-xs flex items-center">
                   <button
                     type="button"
-                    className="p-2 rounded-full bg-blue-100 text-blue-100 mr-2"
+                    className="p-2 rounded-full bg-blue-100 text-blue-600 mr-2"
                   >
                     <ShoppingBag className="w-4 h-4 z-10" />
                   </button>
