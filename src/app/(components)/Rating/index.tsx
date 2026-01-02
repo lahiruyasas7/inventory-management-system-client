@@ -6,9 +6,15 @@ type RatingProps = {
 };
 
 const Rating = ({ rating }: RatingProps) => {
-  return [1, 2, 3, 4, 5].map((index) => (
-    <Star key={index} colorRendering={index <= rating ? "FFC107" : "E4E5E9"} />
-  ));
+  return (
+    <div className="flex">
+      {[1, 2, 3, 4, 5].map((i) => {
+        const color = i <= rating ? "#FFC107" : "#E4E5E9";
+
+        return <Star key={i} size={16} stroke={color} className="mr-1" />;
+      })}
+    </div>
+  );
 };
 
 export default Rating;
