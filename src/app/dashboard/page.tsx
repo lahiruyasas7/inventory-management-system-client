@@ -3,6 +3,7 @@ import React from "react";
 import CardPopularProduct from "./CardPopularProduct";
 import CardSalesSummary from "./CardSalesSummary";
 import CardPurchaseSummary from "./CardPurchaseSummary";
+import CardExpenseSummary from "./CardExpenseSummary";
 
 type Props = {};
 
@@ -13,6 +14,7 @@ const Dashboard = (props: Props) => {
       <CardSalesSummary />
 
       <CardPurchaseSummary />
+      <CardExpenseSummary/>
       <div className="row-span-3 bg-gray-500" />
       <div className="md:row-span-1 xl:row-span-2 bg-gray-500" />
       <div className="md:row-span-1 xl:row-span-2 bg-gray-500" />
