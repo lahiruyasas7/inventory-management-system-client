@@ -40,3 +40,10 @@ export interface DashboardMetrics {
   expenseSummary: ExpenseSummary[];
   expenseByCategorySummary: ExpenseByCategorySummary[];
 }
+
+export interface NewProduct {
+  name: string;
+  price: number;
+  rating?: number;
+  stockQuantity: number;
+}
