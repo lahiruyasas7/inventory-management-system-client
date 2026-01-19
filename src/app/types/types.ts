@@ -55,3 +55,9 @@ export type ProductFormData = {
   rating: number;
 };
 
+export type Users = {
+  userId: string;
+  name: string;
+  email: string;
+}
+
