@@ -26,17 +26,32 @@ export interface ExpenseSummary {
   date: string;
 }
 
-export interface ExpenseByCategory {
+export interface ExpenseByCategorySummary {
   expenseByCategoryId: string;
   category: string;
-  amount: number;
+  amount: string;
   date: string;
 }
 
 export interface DashboardMetrics {
   popularProducts: PopularProducts[];
   salesSummary: SalesSummary[];
-  purchasesSummary: PurchasesSummery[];
+  purchaseSummary: PurchasesSummery[];
   expenseSummary: ExpenseSummary[];
-  expenseByCategorySummary: ExpenseByCategory[];
+  expenseByCategorySummary: ExpenseByCategorySummary[];
 }
+
+export interface NewProduct {
+  name: string;
+  price: number;
+  rating?: number;
+  stockQuantity: number;
+}
+
+export type ProductFormData = {
+  name: string;
+  price: number;
+  stockQuantity: number;
+  rating: number;
+};
+
