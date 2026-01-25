@@ -59,10 +59,20 @@ export type Users = {
   userId: string;
   name: string;
   email: string;
-}
+};
 
 export type UserSettings = {
   label: string;
   value: string | boolean;
-  type: "text" | "toggle"
-}
+  type: "text" | "toggle";
+};
+
+export type AggregatedDataItem = {
+  name: string;
+  color?: string;
+  amount: number;
+};
+
+export type AggregatedData = {
+  [category: string]: AggregatedDataItem;
+};
