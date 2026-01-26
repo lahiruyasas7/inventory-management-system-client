@@ -1,14 +1,16 @@
 import {
   DashboardMetrics,
+  ExpenseByCategorySummary,
   NewProduct,
   PopularProducts,
+  Users,
 } from "@/app/types/types";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const api = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: process.env.NEXT_PUBLIC_API_BASE_URL }),
   reducerPath: "api",
-  tagTypes: ["DashboardMetrics", "products"],
+  tagTypes: ["DashboardMetrics", "products", "Users", "Expenses"],
   endpoints: (build) => ({
     getDashboardMetrics: build.query<DashboardMetrics, void>({
       query: () => "/dashboard",
@@ -29,6 +31,14 @@ export const api = createApi({
       }),
       invalidatesTags: ["products"], // after create a product, refresh the products data
     }),
+    getUsers: build.query<Users[], void>({
+      query: () => "/users",
+      providesTags: ["Users"],
+    }),
+      getExpensesByCategory: build.query<ExpenseByCategorySummary[], void>({
+      query: () => "/expenses",
+      providesTags: ["Expenses"],
+    }),
   }),
 });
 
@@ -36,4 +46,6 @@ export const {
   useGetDashboardMetricsQuery,
   useGetProductsQuery,
   useCreateProductMutation,
+  useGetUsersQuery,
+  useGetExpensesByCategoryQuery
 } = api;
